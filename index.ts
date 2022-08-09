@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
+import BookRoutes from './routes/books.routes';
 import 'express-async-errors';
 
 const app = express();
@@ -9,6 +10,7 @@ app.use(express.json());
 
 app.get('/', (req: Request, res: Response) => res.status(StatusCodes.OK).send('Hello World!'));
 
+app.use(BookRoutes);
 
 // middleware de erro
 
