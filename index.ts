@@ -6,6 +6,9 @@ const port = 3000;
 
 app.use(express.json());
 
+app.get('/', (req: Request, res: Response) => res.status(StatusCodes.OK).send('Hello World!'));
+
+
 // middleware de erro
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
@@ -32,7 +35,6 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
 
 
-app.get('/', (req: Request, res: Response) => res.status(StatusCodes.OK).send('Hello World!'));
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
