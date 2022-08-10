@@ -30,6 +30,16 @@ class BooksController {
 
         res.status(StatusCodes.CREATED).json(bookCreated);
     };
+
+    public updateBook = async (req: Request, res: Response) => {
+        const id = Number(req.params.id);
+
+        const book = req.body;
+
+        await this.bookService.updateBook(id, book);
+
+        res.status(StatusCodes.NO_CONTENT).end();
+    };
 };
 
 export default BooksController;
