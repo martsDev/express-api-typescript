@@ -44,7 +44,7 @@ class BookService {
         };
 
         return this.model.removeBook(id);
-    }
+    };
 };
 
 export default BookService;
